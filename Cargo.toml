@@ -1,0 +1,25 @@
+[package]
+name = "ipt2socks-rs"
+version = "1.0.0"
+edition = "2021"
+authors = ["fokx"]
+description = "Convert iptables/nftables REDIRECT/TPROXY traffic to SOCKS5"
+license = "MIT OR Apache-2.0"
+
+[dependencies]
+tokio = { version = "1.35", features = ["full"] }
+clap = { version = "4.4", features = ["derive"] }
+anyhow = "1.0"
+thiserror = "1.0"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+bytes = "1.5"
+libc = "0.2"
+socket2 = { version = "0.5", features = ["all"] }
+nix = { version = "0.27", features = ["socket", "net", "user"] }
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+strip = true
