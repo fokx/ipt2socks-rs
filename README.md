@@ -163,6 +163,11 @@ Or use the `-u` option to drop privileges after binding:
 sudo ipt2socks-rs -s 127.0.0.1 -p 1080 -u nobody
 ```
 
+## Transparent proxy
+
+[proxy.sh](/proxy.sh) is a convenient scipt to setup transparent proxy using nftables.
+
+
 ## Performance Notes
 
 - **Multi-threading**: Use `-j` to specify multiple worker threads for better performance
